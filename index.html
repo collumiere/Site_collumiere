@@ -267,8 +267,26 @@
   .encart-mld-large h3 span{color:var(--teal)}
   .encart-mld-large p{color:#BFD9E2;font-size:.96rem}
   .encart-mld-large .marques .puce-marque{
-    background:transparent;border-color:rgba(102,193,189,.6);color:#CFE4EB;
+    background:transparent;border-color:rgba(102,193,189,.6);color:#CFE4EB;font-size:.8rem;padding:6px 13px;
   }
+
+  /* ===== Partenaires ===== */
+  .titre-partenaires{
+    font-family:'Poly',serif;font-size:1.5rem;color:var(--fonce);
+    margin:52px 0 8px;text-align:center;
+  }
+  .sous-partenaires{color:var(--texte-doux);text-align:center;max-width:620px;margin:0 auto 34px;font-size:.95rem}
+  .partenaires{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .partenaire{
+    background:var(--blanc);border:1px solid #EBE8DF;border-radius:14px;
+    padding:20px 20px 16px;display:flex;flex-direction:column;gap:6px;
+    transition:transform .2s,box-shadow .2s;
+  }
+  .partenaire:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(5,81,105,.10)}
+  .partenaire b{color:var(--fonce);font-size:.98rem}
+  .partenaire p{color:var(--texte-doux);font-size:.86rem;line-height:1.5;flex:1}
+  .partenaire a{font-weight:700;font-size:.82rem;color:var(--teal-sombre)}
+  .partenaire a:hover{color:var(--orange-fonce)}
 
   /* ===== Portfolio ===== */
   .portfolio{background:var(--blanc)}
@@ -378,6 +396,7 @@
   /* ===== Responsive ===== */
   @media(max-width:900px){
     .grille-3,.usages,.galerie{grid-template-columns:1fr}
+    .partenaires{grid-template-columns:1fr 1fr}
     .etapes{grid-template-columns:1fr 1fr}
     .encart-mld-large{grid-template-columns:1fr;padding:32px 24px}
     .irve-grille,.domo-grille,.zone-grille,.contact-grille,.equipe{grid-template-columns:1fr}
@@ -612,17 +631,93 @@
         <p style="margin-top:20px"><a class="btn btn-orange" href="#contact">Parler de votre projet domotique</a></p>
       </div>
       <div>
-        <p style="font-weight:700;color:#fff;margin-bottom:12px;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase">Nos marques partenaires</p>
+        <p style="font-weight:700;color:#fff;margin-bottom:12px;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase">Notre savoir-faire couvre</p>
         <div class="marques">
-          <a class="puce-marque" href="https://www.knx.org/knx-fr/" target="_blank" rel="noopener">KNX</a>
-          <a class="puce-marque" href="https://www.lutron.com/europe/fr-FR" target="_blank" rel="noopener">Lutron</a>
-          <a class="puce-marque" href="https://www.control4.com" target="_blank" rel="noopener">Control4</a>
-          <a class="puce-marque" href="https://www.basalte.be/fr" target="_blank" rel="noopener">Basalte</a>
-          <a class="puce-marque" href="https://hager.com/fr" target="_blank" rel="noopener">Hager</a>
-          <a class="puce-marque" href="https://www.bowerswilkins.com/fr-fr/" target="_blank" rel="noopener">Bowers &amp; Wilkins</a>
-          <a class="puce-marque" href="https://www.mobotix.com/fr" target="_blank" rel="noopener">Mobotix</a>
-          <a class="puce-marque" href="https://vitrea.com" target="_blank" rel="noopener">Vitrea</a>
+          <span class="puce-marque">Audio / Vidéo</span>
+          <span class="puce-marque">Éclairage</span>
+          <span class="puce-marque">Chauffage / Clim</span>
+          <span class="puce-marque">Économies d'énergie</span>
+          <span class="puce-marque">Sécurité &amp; vidéosurveillance</span>
+          <span class="puce-marque">Volets &amp; BSO</span>
+          <span class="puce-marque">Piscine</span>
+          <span class="puce-marque">Maintien à domicile</span>
         </div>
+      </div>
+    </div>
+
+
+    <h3 class="titre-partenaires">Nos partenaires privilégiés</h3>
+    <p class="sous-partenaires">Des marques choisies pour leur fiabilité, leur design et leur pérennité, distribuées et intégrées par nos soins.</p>
+    <div class="partenaires">
+      <div class="partenaire">
+        <b>KNX</b>
+        <p>Le standard mondial ouvert de la gestion du bâtiment, au cœur de nos installations depuis 2012.</p>
+        <a href="https://www.knx.org/knx-fr/" target="_blank" rel="noopener">Voir le site →</a>
+      </div>
+      <div class="partenaire">
+        <b>ABB</b>
+        <p>Groupe international d'électrification : solutions électriques et d'automatisation du bâtiment.</p>
+        <a href="https://global.abb/group/fr" target="_blank" rel="noopener">Voir le site →</a>
+      </div>
+      <div class="partenaire">
+        <b>Hager</b>
+        <p>Matériel électrique et gestion de l'énergie pour l'habitat, le tertiaire et l'industrie.</p>
+        <a href="https://hager.com/fr" target="_blank" rel="noopener">Voir le site →</a>
+      </div>
+      <div class="partenaire">
+        <b>JUNG</b>
+        <p>Appareillage et commandes design « Made in Germany », entre technologie du bâtiment et esthétique.</p>
+        <a href="https://www.jung-group.com/fr-FR/" target="_blank" rel="noopener">Voir le site →</a>
+      </div>
+      <div class="partenaire">
+        <b>Lutron</b>
+        <p>La référence mondiale du contrôle de l'éclairage et des stores.</p>
+        <a href="https://www.lutron.com/europe/fr-FR" target="_blank" rel="noopener">Voir le site →</a>
+      </div>
+      <div class="partenaire">
+        <b>Control4</b>
+        <p>Plateforme de pilotage unifié de la maison : éclairage, audio, vidéo, sécurité.</p>
+        <a href="https://www.control4.com" target="_blank" rel="noopener">Voir le site →</a>
+      </div>
+      <div class="partenaire">
+        <b>Savant</b>
+        <p>Systèmes de maison intelligente haut de gamme, pour un quotidien orchestré avec luxe et simplicité.</p>
+        <a href="https://www.savant.com" target="_blank" rel="noopener">Voir le site →</a>
+      </div>
+      <div class="partenaire">
+        <b>Basalte</b>
+        <p>Claviers tactiles et interfaces domotiques d'une élégance épurée, pensés pour rester simples et intuitifs.</p>
+        <a href="https://www.basalte.be/fr" target="_blank" rel="noopener">Voir le site →</a>
+      </div>
+      <div class="partenaire">
+        <b>Atelier Luxus</b>
+        <p>Interrupteurs d'exception aux finitions sur mesure, qui s'adaptent à tous les styles d'intérieurs.</p>
+        <a href="https://www.atelierluxus.com" target="_blank" rel="noopener">Voir le site →</a>
+      </div>
+      <div class="partenaire">
+        <b>Luxonov</b>
+        <p>Appareillage mural haut de gamme travaillé dans des matières nobles.</p>
+        <a href="https://www.luxonov.com" target="_blank" rel="noopener">Voir le site →</a>
+      </div>
+      <div class="partenaire">
+        <b>Vitrea</b>
+        <p>Commandes murales design en verre, discrètes et raffinées.</p>
+        <a href="https://vitrea.com" target="_blank" rel="noopener">Voir le site →</a>
+      </div>
+      <div class="partenaire">
+        <b>Inno-International</b>
+        <p>Solutions murales encastrées pour iPad et interfaces parfaitement intégrées.</p>
+        <a href="https://www.inno-international.com" target="_blank" rel="noopener">Voir le site →</a>
+      </div>
+      <div class="partenaire">
+        <b>Bowers &amp; Wilkins</b>
+        <p>Enceintes de prestige pour l'audio multiroom et le home cinéma.</p>
+        <a href="https://www.bowerswilkins.com/fr-fr/" target="_blank" rel="noopener">Voir le site →</a>
+      </div>
+      <div class="partenaire">
+        <b>Mobotix</b>
+        <p>Vidéosurveillance intelligente et robuste pour les biens et les personnes.</p>
+        <a href="https://www.mobotix.com/fr" target="_blank" rel="noopener">Voir le site →</a>
       </div>
     </div>
   </div>
