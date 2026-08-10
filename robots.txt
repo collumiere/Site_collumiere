@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://collumiere.fr/sitemap.xml
