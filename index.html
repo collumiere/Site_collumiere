@@ -134,13 +134,16 @@
   }
   .nav{
     max-width:1140px;margin:0 auto;padding:12px 24px;
-    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    display:flex;align-items:center;justify-content:space-between;gap:20px;
+    min-height:70px;
   }
   .logo-img{height:46px;display:block}
-  nav ul{display:flex;gap:24px;list-style:none;align-items:center}
+  nav ul{display:flex;gap:18px;list-style:none;align-items:center;flex-wrap:nowrap}
+  nav li{display:flex;align-items:center}
   nav a{
-    color:var(--fonce);font-weight:600;font-size:.9rem;letter-spacing:.02em;
-    transition:color .2s;
+    color:var(--fonce);font-weight:600;font-size:.88rem;letter-spacing:.02em;
+    transition:color .2s;white-space:nowrap;line-height:1;
+    display:inline-flex;align-items:center;
   }
   nav a:hover{color:var(--orange-fonce)}
   .nav-cta{
@@ -482,12 +485,7 @@
   footer a:hover{color:var(--orange)}
 
   /* ===== Responsive ===== */
-  @media(max-width:900px){
-    .grille-3,.usages,.galerie{grid-template-columns:1fr}
-    .partenaires{grid-template-columns:1fr 1fr}
-    .etapes{grid-template-columns:1fr 1fr}
-    .encart-mld-large{grid-template-columns:1fr;padding:32px 24px}
-    .irve-grille,.domo-grille,.zone-grille,.contact-grille,.equipe{grid-template-columns:1fr}
+  @media(max-width:1080px){
     nav ul{
       display:none;position:absolute;top:100%;left:0;right:0;
       background:var(--blanc);flex-direction:column;gap:0;align-items:flex-start;
@@ -496,6 +494,13 @@
     nav ul.ouvert{display:flex}
     nav li{padding:10px 0}
     .burger{display:block}
+  }
+  @media(max-width:900px){
+    .grille-3,.usages,.galerie{grid-template-columns:1fr}
+    .partenaires{grid-template-columns:1fr 1fr}
+    .etapes{grid-template-columns:1fr 1fr}
+    .encart-mld-large{grid-template-columns:1fr;padding:32px 24px}
+    .irve-grille,.domo-grille,.zone-grille,.contact-grille,.equipe{grid-template-columns:1fr}
     section{padding:64px 20px}
     .hero{padding:72px 20px 64px}
     .logo-img{height:40px}
