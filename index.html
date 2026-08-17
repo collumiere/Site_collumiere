@@ -93,6 +93,35 @@
   }
 }
 </script>
+<script>
+(function(){
+  var CLE = 'collumiere_cookies_consent';
+  var GA_ID = 'G-66D7ERGYVP';
+  function chargerGA(){
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', GA_ID, { anonymize_ip: true });
+  }
+  var choix = localStorage.getItem(CLE);
+  if (choix === 'accepte') { chargerGA(); }
+  document.addEventListener('DOMContentLoaded', function(){
+    if (!choix) {
+      var b = document.getElementById('cookie-banner');
+      if (b) b.style.display = 'flex';
+    }
+  });
+  window.collumiereCookie = function(reponse){
+    localStorage.setItem(CLE, reponse);
+    document.getElementById('cookie-banner').style.display = 'none';
+    if (reponse === 'accepte') chargerGA();
+  };
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poly:ital@0;1&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -509,6 +538,29 @@
   @media(prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
     html{scroll-behavior:auto}
+  }
+
+  /* ===== Bandeau cookies ===== */
+  #cookie-banner{
+    display:none; position:fixed; left:0; right:0; bottom:0; z-index:999;
+    background:var(--fonce-2); color:#fff;
+    padding:20px 24px; box-shadow:0 -6px 24px rgba(0,0,0,.25);
+    flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px;
+  }
+  #cookie-banner p{
+    color:#CFE4EB; font-size:.9rem; max-width:640px; margin:0; line-height:1.5;
+  }
+  #cookie-banner a{color:var(--teal)}
+  #cookie-banner .cookie-boutons{display:flex; gap:12px; flex-shrink:0}
+  #cookie-banner button{
+    font-family:'Montserrat',sans-serif; font-weight:700; font-size:.88rem;
+    padding:11px 22px; border-radius:8px; cursor:pointer; border:none;
+  }
+  #cookie-refuser{background:transparent; color:#CFE4EB; border:1.5px solid rgba(255,255,255,.3)!important}
+  #cookie-accepter{background:var(--orange); color:var(--fonce)}
+  #cookie-accepter:hover{background:var(--orange-fonce); color:#fff}
+  @media(max-width:700px){
+    #cookie-banner{flex-direction:column; align-items:flex-start}
   }
 </style>
 </head>
@@ -976,5 +1028,13 @@
   });
 </script>
 
+
+<div id="cookie-banner">
+  <p>Ce site utilise Google Analytics (IP anonymisée) pour mesurer sa fréquentation. Vos données ne sont ni revendues ni utilisées à des fins publicitaires. <a href="mentions-legales.html">En savoir plus</a></p>
+  <div class="cookie-boutons">
+    <button id="cookie-refuser" onclick="collumiereCookie('refuse')">Refuser</button>
+    <button id="cookie-accepter" onclick="collumiereCookie('accepte')">Accepter</button>
+  </div>
+</div>
 </body>
 </html>
